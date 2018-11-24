@@ -17,7 +17,8 @@
     </table>
     </main>
     <script>
-      Papa.parse(location.search.substring(1) + '.csv', {
+      Papa.parse(location.search.substring(1) + '.tsv', {
+        delimiter: '\t',
         download: true,
         skipEmptyLines: true,
         complete: function(results) {
