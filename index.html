@@ -22,6 +22,8 @@
         download: true,
         skipEmptyLines: true,
         complete: function(results) {
+          results.data[2][0] = '<a href="' + results.data[2][0] + '">[1]</a>'
+          results.data[2][1] = '<a href="' + results.data[2][1] + '">[1]</a>'
           $('#datatable').DataTable({
             paging: false,
             ordering: false,
