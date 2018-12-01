@@ -22,7 +22,7 @@ jan lawa ma li pana e mani mute tawa jan ike tu li toki e ni:
 
 jan ike tu li open e ilo pali len.
 ona li kepeken ilo pali len.
-taso ijo ala li lon insa ilo pali len!
+taso ijo ala li lon insa pi ilo pali len!
 
 tenpo suli la, ona li kepeken ilo pali len, taso ona li pali ala e len.
 
@@ -76,7 +76,7 @@ jan ali li toki e ni: “a! len sin pi jan lawa ma li pona mute!”
 
 tenpo suno open la jan ike tu li toki e ni: “o lukin! len sin pi jan lawa ma li pini!”
 
-jan lawa ma li kama tawa ona lon poka jan mani.
+jan lawa ma li kama tawa ona lon poka pi jan mani.
 jan ike tu li sewi e luka li toki e ni:
 “o lukin e len ni!”
 
@@ -107,7 +107,7 @@ jan lawa ma li tawa lon supa pi ma tomo.
 jan ali li lukin e ona li toki e ni:
 “a! len sin pi jan lawa ma li pona lukin!”
 jan ala li ken lukin e len sin pi jan lawa ma.
-taso jan li ken ala toki e ni, tan ni: ona wile ala e ni: jan ali pilin e ni: ona li nasa li jan pi pona ala!
+taso jan li ken ala toki e ni, tan ni: ona li wile ala e ni: jan ali li pilin e ni: ona li nasa li jan pi sona ala!
 tan ni la jan ali li toki e ni: “a! len sin pi jan lawa ma li pona mute tawa mi!”
 
 jan lili li toki e ni: “taso jan lawa ma li len e ala!”
