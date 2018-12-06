@@ -52,7 +52,7 @@
 <dt>kiwen</dt>
 	<dd>kon en telo en kiwen li ante. ijo li kiwen la ijo ni li kon ala li telo ala.</dd>
 	<dd>jan li pali e ilo kepeken kiwen. jan li ken tu e ijo li ken utala e ijo kepeken ilo ni.</dd>
-<dt>ko</dt><dd>jan li weka e ko tan ma li pali e poki kepeken ko. ko en telo li wan la ona li kiwen ala. ko li seli li ona li kama kiwen.</dd>
+<dt>ko</dt><dd>jan li weka e ko tan ma li pali e poki kepeken ko. ko en telo li wan la ona li kiwen ala. ko li seli la ona li kama kiwen.</dd>
 <dt>kon</dt>
 	<dd>jan ala li ken lukin e kon. kon li pilin e jan ali. kon li tawa la jan li ken pilin e kon.</dd>
 	<dd><em>mi (pana e) kon.</em> mi tawa e kon lon insa mi.</dd>
@@ -149,6 +149,8 @@
 <dt>pini</dt>
 	<dd>pini tu taso li lon palisa. pini wan li lon weka tan pini ante. pini tu li lon poka pi wan ante palisa.</dd>
 	<dd><em>mi pini moku.</em> tenpo pini lili la mi moku. taso tenpo ni la mi moku ala.</dd>
+<dt>pipi</dt><dd>pipi li sama soweli, taso pipi li lili mute li jo e selo kiwen e noka mute.</dd>
+<dt>poka</dt><dd><em>mi lon poka ona.</em> mi weka ala tan ona. kon li pilin e ona la mi pilin e kon sama.</dd>
 <dt>poki</dt><dd>poki li ilo. jan li pali e poki tan ni: ijo ante li ken lon insa poki. jan li wile e ni.</dd>
 <dt>pona</dt>
 	<dd><em>ona li pona.</em> ona li ike ala.</dd>
@@ -204,7 +206,7 @@
 	<dd><em>mi tan e ona.</em> ona li kama tan ni: mi pali e ijo.</dd>
 	<dd><em>mi tawa ma ni tan ma ante.</em> tenpo pini la mi lon ma ante. taso mi tawa. ni la mi lon ma ni.</dd>
 <dt>taso</dt>
-	<dd><em>A li lon, taso B li lon ala.</em> mi toki e ni: ona li lon. ken la sina li kute e ni la, sina li toki insa e ni: B li lon. mi wile e ni: sina sona e ni: B li lon ala. ni la mi toki e ni: "taso B li lon ala."</dd>
+	<dd><em>A li lon, taso B li lon ala.</em> mi toki e ni: "A li lon." ken la sina li kute e ni la, sina li toki insa e ni: B li lon. mi wile e ni: sina sona e ni: B li lon ala. ni la mi toki e ni: "taso B li lon ala."</dd>
 	<dd><em>mi jo e ona taso.</em> mi jo e ona e ijo ante ala.</dd>
 <dt>tawa</dt>
 	<dd><em>mi tawa ona.</em> tenpo pini la mi weka tan ona. taso mi tawa. ni la mi lon poka ona.</dd>
@@ -228,6 +230,8 @@
 	<dd><em>mi wan e ona.</em> mi tan e ni: ona li kama wan.</dd>
 <dt>waso</dt><dd>waso li sama soweli, taso waso li jo ala e linja sama soweli li jo e linja lipu. waso li jo e noka tu taso. waso mute li ken tawa kon kepeken linja lipu tawa lon tenpo suli.</dd>
 <dt>wawa</dt><dd>jan wawa li ken tawa e ijo suli.</dd>
-<dt>weka</dt><dd><em>mi tawa weka tan ona.</em> tenpo pini la mi lon poka ona. taso mi tawa. ni la mi weka tan ona.</dd>
+<dt>weka</dt>
+	<dd><em>mi weka tan ona.</em> mi lon poka ona ala.</dd>
+	<dd><em>mi tawa weka tan ona.</em> tenpo pini la mi lon poka ona. taso mi tawa. ni la mi weka tan ona.</dd>
 <dt>wile</dt><dd><em>mi wile e ona.</em> mi jo ala e ona la ni li ike tawa mi.</dd>
 </dl>
