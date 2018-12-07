@@ -249,3 +249,5 @@
 	<dd><em>mi tawa weka tan ona.</em> tenpo pini la mi lon poka ona. taso mi tawa. ni la mi weka tan ona.</dd>
 <dt>wile</dt><dd><em>mi wile e ona.</em> mi jo ala e ona la ni li ike tawa mi.</dd>
 </dl>
+
+<p align="right"><em>&mdash; jan Tepu</em></p>
