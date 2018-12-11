@@ -1,58 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>toki ante</title>
-    <link rel="stylesheet" href="linja-pona/stylesheet.css">
-    <style>
-      a { cursor: pointer; text-decoration: none; }
-      .linja-pona { font-family: linja-pona }
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.1/papaparse.min.js"></script>
-  </head>
-  <body>
-    <main style="max-width:60em;margin:0 auto">
-    <div><a class="toggle-vis" data-column="0">Show/hide English</a>
-       - <a class="toggle-vis" data-column="1">Show/hide Toki Pona</a>
-       - <a class="toggle-linja-pona">Use <em>linja pona</em> font</a>
-    </div>
-    <table id="datatable" class="stripe hover">
-      <thead><tr><th>English</th><th>Toki Pona</th></tr></thead>
-      <tbody></tbody>
-    </table>
-    </main>
-    <script>
-      Papa.parse(location.search.substring(1) + '.tsv', {
-        delimiter: '\t',
-        download: true,
-        skipEmptyLines: true,
-        complete: function(results) {
-          results.data[1][0] = '<a href="' + results.data[2][0] + '">' + results.data[1][0] + '</a>'
-          results.data[1][1] = '<a href="' + results.data[2][1] + '">' + results.data[1][1] + '</a>'
-          results.data.splice(2, 1)
-          var table = $('#datatable').DataTable({
-            paging: false,
-            ordering: false,
-            columns: [
-              { width: '50%' },
-              { className: 'dt-body-right' }
-            ],
-            data: results.data
-          })
-          $('a.toggle-vis').on('click', function(e) {
-            e.preventDefault()
-            var column = table.column($(this).attr('data-column'))
-            column.visible(!column.visible())
-          })
-          $('a.toggle-linja-pona').on('click', function(e) {
-            $(table.column(1).nodes()).toggleClass('linja-pona')
-          })
-        }
+---
+title: toki ante
+layout: lipu
+custom_css:
+- https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/css/jquery.dataTables.min.css
+custom_js:
+- https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js
+- https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.19/js/jquery.dataTables.min.js
+- https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.6.1/papaparse.min.js
+---
+<div><a class="toggle-vis" data-column="0">Show/hide English</a>
+   - <a class="toggle-vis" data-column="1">Show/hide Toki Pona</a>
+   - <a class="toggle-linja-pona">Use <em>linja pona</em> font</a>
+</div>
+<table id="datatable" class="stripe hover">
+  <thead><tr><th>English</th><th>Toki Pona</th></tr></thead>
+  <tbody></tbody>
+</table>
+<script>
+  Papa.parse(location.search.substring(1) + '.tsv', {
+    delimiter: '\t',
+    download: true,
+    skipEmptyLines: true,
+    complete: function(results) {
+      results.data[1][0] = '<a href="' + results.data[2][0] + '">' + results.data[1][0] + '</a>'
+      results.data[1][1] = '<a href="' + results.data[2][1] + '">' + results.data[1][1] + '</a>'
+      results.data.splice(2, 1)
+      var table = $('#datatable').DataTable({
+        paging: false,
+        ordering: false,
+        columns: [
+          { width: '50%' },
+          { className: 'dt-body-right' }
+        ],
+        data: results.data
       })
-    </script>
-  </body>
-</html>
+      $('a.toggle-vis').on('click', function(e) {
+        e.preventDefault()
+        var column = table.column($(this).attr('data-column'))
+        column.visible(!column.visible())
+      })
+      $('a.toggle-linja-pona').on('click', function(e) {
+        $(table.column(1).nodes()).toggleClass('linja-pona')
+      })
+    }
+  })
+</script>

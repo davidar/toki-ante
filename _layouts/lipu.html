@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/main.css">
+    {% for stylesheet in page.custom_css %}
+    <link rel="stylesheet" href="{{ stylesheet }}" media="screen" type="text/css">
+    {% endfor %}
+    {% for script in page.custom_js %}
+    <script src="{{ script }}" type="text/javascript"></script>
+    {% endfor %}
+  </head>
+  <body>
+    <main class="{{ page.main_class }}">
+    {% if page.main_class contains 'linja-pona' %}
+    <a id="ante-sitelen" onclick="document.querySelector('main').classList.toggle('linja-pona')">sitelen-pona</a>
+    {% endif %}
+    {{ content }}
+    </main>
+    <footer>
+      <div title="jan Tepu">jan [_toki_en_pona_uta]</div>
+    </footer>
+  </body>
+</html>
