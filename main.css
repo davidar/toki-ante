@@ -2,6 +2,7 @@
 
 body {
   font-family: sans-serif;
+  text-rendering: optimizeLegibility;
 }
 main {
   max-width: 60em;
@@ -76,4 +77,20 @@ dl>br {
 }
 .linja-pona #ante-sitelen {
   font-size: 300%;
+}
+
+.ligfix del {
+  text-decoration: none;
+}
+.ligfix ins {
+  text-decoration: none;
+  display: none;
+}
+.linja-pona .ligfix del {
+  display: none;
+}
+.linja-pona .ligfix ins {
+  display: inline-block;
+  width: 1em;
+  white-space: nowrap;
 }

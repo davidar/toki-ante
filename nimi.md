@@ -40,7 +40,7 @@ main_class: linja-pona narrow
 	<dd>ijo-awen li ante ala lon tenpo suli.</dd>
 	<dd>ijo-awen li tawa ala lon tenpo suli.</dd>
 	<dd><em>mi awen moku.</em> mi pini ala moku.</dd>
-<dt>e &nbsp;</dt>
+<dt>e</dt>
 	<dd><em>mi moli e ona.</em> mi tan e moli ona.</dd>
 	<dd><em>mi pona e ona.</em> mi tan e ni: ona li kama pona.</dd>
 	<dd><em>mi moku e kili e pan.</em> mi moku e kili. mi moku e pan.</dd>
