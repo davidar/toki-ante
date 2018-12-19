@@ -6,6 +6,7 @@ function createSpan(html) {
 }
 
 var main = document.querySelector('main')
+findAndReplaceDOMText(main, { find: /[\w-]*[,:.!?]/g, wrap: 'span', wrapClass: 'punct' })
 findAndReplaceDOMText(main, { find: /\b[aeo]\b(?!!)/g, replace: function(portion) {
   var text = portion.text
   return createSpan('<del>' + text + '</del><ins>' + text +'!</ins>')

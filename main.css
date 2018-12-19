@@ -14,6 +14,10 @@ main.narrow {
 h1 {
   text-align: center;
 }
+hr {
+  width: 80%;
+  border: 0.75px solid;
+}
 footer {
   max-width: 60em;
   margin: 0 auto;
@@ -37,11 +41,22 @@ a:hover {
   font-family: linja-pona;
 }
 .linja-pona q {
-  margin: 0 0.3em;
+  margin-right: 0.5em;
+}
+.linja-pona q::after {
+  margin-left: -0.5em;
 }
 .linja-pona em {
   font-style: normal;
   font-weight: bold;
+}
+.linja-pona .pi-anpa {
+  font-weight: normal;
+  font-size: 150%;
+  display: inline-block;
+  vertical-align: -0.18em;
+  margin-right: -0.7em;
+  margin-left: -0.2em;
 }
 
 dt {
@@ -93,4 +108,9 @@ dl>br {
   display: inline-block;
   width: 1em;
   white-space: nowrap;
+}
+.linja-pona .punct {
+  display: inline-block;
+  white-space: nowrap;
+  margin-right: 0.5em;
 }
