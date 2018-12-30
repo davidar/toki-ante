@@ -1,12 +1,15 @@
 @import "linja-pona/stylesheet.css";
 
+* {
+  box-sizing: border-box;
+}
 html, body {
   overflow-x: hidden;
 }
 body {
   font-family: sans-serif;
   text-rendering: optimizeLegibility;
-  font-size: 137.5%;
+  font-size: 150%;
   color: #666;
 }
 main {
@@ -21,8 +24,10 @@ main {
 main.narrow {
   max-width: 40em;
 }
-h1 {
+h1, h2, h3, h4, h5, h6, .authors {
   text-align: center;
+  width: 80%;
+  margin: 1em auto;
 }
 hr {
   width: 80%;
@@ -46,10 +51,38 @@ a:hover {
   color: #84141e;
 }
 
+h2 {
+  border-bottom: 2px solid;
+  border-top: 2px solid;
+  padding: 0.5em 0;
+}
+
+h3 { /* https://stackoverflow.com/a/14731123/78204 */
+  overflow: hidden;
+  text-align: center;
+}
+h3::before, h3::after {
+  background-color: #666;
+  content: "";
+  display: inline-block;
+  height: 2px;
+  position: relative;
+  vertical-align: 0.4em;
+  width: 50%;
+}
+h3::before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+h3::after {
+  left: 0.5em;
+  margin-right: -50%;
+}
+
 .linja-pona {
   font-family: linja-pona;
 }
-.linja-pona h1 {
+.linja-pona h1, .linja-pona h2, .linja-pona h3 {
   font-weight: normal;
 }
 .linja-pona q {
@@ -76,7 +109,7 @@ a:hover {
 .linja-pona .pi-kulupu>:last-child {
   display: inline-block;
   height: 1.2em;
-  padding-left: 0.1em;
+  padding-left: 0.05em;
   margin-left: 0.05em;
   border-left: 0.065em solid;
   border-bottom: 0.065em solid;
@@ -117,51 +150,192 @@ dl>br {
   font-size: 200%;
 }
 
-.ligfix del {
+.ligfix del,
+.cartouche del {
   text-decoration: none;
 }
-.ligfix ins {
+.ligfix ins,
+.cartouche ins {
   text-decoration: none;
   display: none;
 }
-.linja-pona .ligfix del {
+.linja-pona .ligfix del,
+.linja-pona .cartouche del {
   display: none;
 }
-.linja-pona .ligfix ins {
+.linja-pona .ligfix ins,
+.linja-pona .cartouche ins {
   display: inline-block;
-  width: 1em;
   white-space: nowrap;
 }
+.linja-pona .ligfix ins { width: 1em }
 .linja-pona .punct {
   display: inline-block;
   white-space: nowrap;
+}
+.punct.nimi-seme::after { content: "?" }
+.linja-pona .punct.nimi-seme::after { content: "" }
+.linja-pona .ni-colon,
+.linja-pona .punct.bang,
+.linja-pona .punct.nimi-seme {
   margin-right: 0.5em;
 }
+.linja-pona .qmark {
+  width: 1em;
+}
+.linja-pona .qmark>ins {
+  position: absolute;
+  top: 0;
+  left: -0.4em;
+}
+.linja-pona .nimi-e,
+.linja-pona .nimi-li {
+  font-weight: bold;
+  font-size: 59%;
+  vertical-align: 0.25em;
+}
+.linja-pona .nimi-e  .nimi-e,
+.linja-pona .nimi-li .nimi-li {
+  font-size: inherit;
+  vertical-align: inherit;
+}
+.linja-pona .nimi-la {
+  margin-left: -0.7em;
+  color: rgba(0,0,0,0);
+  border: 1.5px solid #666;
+  border-top-right-radius: 0.65em;
+  border-bottom-right-radius: 0.65em;
+  border-left: 0;
+}
 
-.linja-pona .overlay-glyphs {
+.linja-pona .overlay-glyphs,
+.linja-pona .qmark {
   display: inline-block;
   position: relative;
   line-height: 1em;
   height: 1em;
+  overflow: hidden;
+  vertical-align: -0.1em;
 }
-.linja-pona .overlay-glyphs>:first-child.nimi-lon {
-  vertical-align: -0.45em;
+.linja-pona .overlay-glyphs>:first-child.nimi-sijelo { vertical-align: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ike    { vertical-align: -0.35em }
+.linja-pona .overlay-glyphs>:first-child.nimi-nimi   { vertical-align: -0.23em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin  { vertical-align: -0.10em }
+.linja-pona .overlay-glyphs>:first-child.nimi-kama,
+.linja-pona .overlay-glyphs>:first-child.nimi-lon,
+.linja-pona .overlay-glyphs>:first-child.nimi-sama,
+.linja-pona .overlay-glyphs>:first-child.nimi-tenpo {
+  display: inline-block;
+  font-weight: bold;
+  transform-origin: bottom;
 }
-.linja-pona .overlay-glyphs>:last-child {
+.linja-pona .overlay-glyphs>:first-child.nimi-kama  { font-size: 59% }
+.linja-pona .overlay-glyphs>:first-child.nimi-lon   { transform: scale(0.8, 0.6); vertical-align: -0.1em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sama  { transform: scale(1.0, 0.5) }
+.linja-pona .overlay-glyphs>:first-child.nimi-tenpo { transform: scale(0.66, 0.5) }
+.linja-pona .overlay-glyphs>:first-child + span {
   text-align: center;
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   line-height: inherit;
-  font-size: 50%;
+  font-size: 59%;
   font-weight: bold;
 }
-.linja-pona .overlay-glyphs>:first-child.nimi-ken  + span { top: -0.65em }
-.linja-pona .overlay-glyphs>:first-child.nimi-wile + span { top: -0.50em }
-.linja-pona .overlay-glyphs>:first-child.nimi-pona + span { top: -0.50em }
-.linja-pona .overlay-glyphs>:first-child.nimi-lon  + span { top: -0.40em }
-.linja-pona .overlay-glyphs>:first-child.nimi-len  + span { top: -0.21em }
-.linja-pona .overlay-glyphs>:first-child.nimi-mi   + span { top: -0.20em; left: 0.03em }
-.linja-pona .overlay-glyphs>:first-child.nimi-toki + span { top:  0.13em }
-.linja-pona .overlay-glyphs>:first-child.nimi-tan  + span { top:  0.30em; left: 0.15em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo     + span,
+.linja-pona .overlay-glyphs>:first-child.nimi-kama,
+.linja-pona .overlay-glyphs>:first-child.nimi-kama    + span,
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin   + span,
+.linja-pona .overlay-glyphs>:first-child.nimi-ma      + span,
+.linja-pona .overlay-glyphs>:first-child.nimi-nimi    + span,
+.linja-pona .overlay-glyphs>:first-child.nimi-tenpo   + span {
+  transform: scaleY(0.83);
+  transform-origin: bottom;
+}
+.linja-pona .overlay-glyphs>:first-child.nimi-nimi    + span { top: -0.55em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo     + span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-kama    + span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin   + span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ma      + span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-tenpo   + span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ni      + span { top: -0.50em; left:  0.03em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ken     + span { top: -0.45em; left: -0.15em }
+.linja-pona .overlay-glyphs>:first-child.nimi-pona    + span { top: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lon     + span { top: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ike     + span { top: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sijelo  + span { top: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-kasi    + span { top: -0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sama    + span { top: -0.30em }
+.linja-pona .overlay-glyphs>:first-child.nimi-anpa    + span { top: -0.30em }
+.linja-pona .overlay-glyphs>:first-child.nimi-wile    + span { top: -0.30em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lupa    + span { top: -0.20em }
+.linja-pona .overlay-glyphs>:first-child.nimi-len     + span { top: -0.20em }
+.linja-pona .overlay-glyphs>:first-child.nimi-mi      + span { top: -0.20em; left:  0.03em }
+.linja-pona .overlay-glyphs>:first-child.nimi-mama    + span { top: -0.18em }
+.linja-pona .overlay-glyphs>:first-child.nimi-insa    + span { top: -0.15em }
+.linja-pona .overlay-glyphs>:first-child.nimi-poka    + span { top:  0.00em; left: -0.10em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lape    + span { top:  0.00em; left:  0.15em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ona     + span { top:  0.04em; left:  0.10em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ko      + span { top:  0.05em }
+.linja-pona .overlay-glyphs>:first-child.nimi-mani    + span { top:  0.05em }
+.linja-pona .overlay-glyphs>:first-child.nimi-meli    + span { top:  0.07em; font-size:47% }
+.linja-pona .overlay-glyphs>:first-child.nimi-pilin   + span { top:  0.07em }
+.linja-pona .overlay-glyphs>:first-child.nimi-wawa    + span { top:  0.10em }
+.linja-pona .overlay-glyphs>:first-child.nimi-tan     + span { top:  0.10em; left:  0.23em }
+.linja-pona .overlay-glyphs>:first-child.nimi-toki    + span { top:  0.13em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sina    + span { top:  0.15em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sona    + span { top:  0.20em }
+.linja-pona .overlay-glyphs>:first-child.nimi-tomo    + span { top:  0.20em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen + span { top:  0.20em }
+.linja-pona .overlay-glyphs>:first-child.nimi-pali    + span { top:  0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-moku    + span { top:  0.50em }
+
+.linja-pona .overlay-glyphs>:first-child.nimi-meli + .nimi-sewi { left: -0.05em }
+
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo,
+.linja-pona .overlay-glyphs>:first-child.nimi-kasi,
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin,
+.linja-pona .overlay-glyphs>:first-child.nimi-ma,
+.linja-pona .overlay-glyphs>:first-child.nimi-ni,
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen,
+.linja-pona .overlay-glyphs>:first-child.nimi-telo {
+  display: inline-block;
+  width: 1em;
+  position: relative;
+  overflow: hidden;
+}
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo     { height: 0.45em }
+.linja-pona .overlay-glyphs>:first-child.nimi-kasi    { height: 0.39em }
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin   { height: 0.45em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ma      { height: 0.55em; top: 0.05em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ni      { height: 0.40em; top: 0.05em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen { height: 1.00em }
+.linja-pona .overlay-glyphs>:first-child.nimi-telo    { height: 0.33em }
+.linja-pona .overlay-glyphs>:first-child>span,
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen+span+.nimi-sitelen,
+.linja-pona .overlay-glyphs>:first-child.nimi-telo   +span+.nimi-telo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3em;
+  text-align: left;
+}
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo    >span { top: -0.42em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ma     >span { top: -0.37em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ni     >span { top: -0.50em }
+.linja-pona .overlay-glyphs>:first-child.nimi-ilo    >span::before { content: "ilo-lukin" }
+.linja-pona .overlay-glyphs>:first-child.nimi-lukin  >span::before { content: "ilo-lukin" }
+.linja-pona .overlay-glyphs>:first-child.nimi-kasi   >span::before { content: "ma-kasi" }
+.linja-pona .overlay-glyphs>:first-child.nimi-ma     >span::before { content: "ma-ale" }
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen>span::before { content: "lipu" }
+.linja-pona .overlay-glyphs>:first-child.nimi-telo   >span::before { content: "telo-lili" }
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen+span+.nimi-sitelen,
+.linja-pona .overlay-glyphs>:first-child.nimi-telo   +span+.nimi-telo {
+  display: inline-block;
+  overflow: hidden;
+}
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen+span+.nimi-sitelen { height: 0.40em }
+.linja-pona .overlay-glyphs>:first-child.nimi-telo   +span+.nimi-telo    { height: 0.33em }
+.linja-pona .overlay-glyphs>:first-child.nimi-sitelen+span+.nimi-sitelen::before { content: "sitelen-pona" }
+.linja-pona .overlay-glyphs>:first-child.nimi-telo   +span+.nimi-telo::before    { content: "telo-lili" }
