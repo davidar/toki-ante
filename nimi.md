@@ -4,7 +4,7 @@ layout: lipu
 permalink: /nimi
 main_class: linja-pona narrow
 ---
-<h1>lipu=nimi pi=toki-pona taso</h1>
+<h1>lipu+nimi pi+toki+pona taso</h1>
 
 <dl>
 <dt>a!</dt>
